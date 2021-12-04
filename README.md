@@ -1,4 +1,4 @@
-# Backup system for October CMS
+# Backup system for Winter CMS
 - [Overview](#introduction)
 - [Requirements](#requirements)
 - [Features](#features)
@@ -7,7 +7,7 @@
 - [Dumping the database](#dumping-db)
 <a name="introduction"></a>
 ## Introduction
-This plugin let you create backups of your files and databases. It uses the amazing laravel package [spatie/laravel-backup](https://github.com/spatie/laravel-backup).
+This plugin let you create backups of your files and databases. It uses the amazing laravel package [spatie/laravel-backup](https://github.com/spatie/laravel-backup). This is a fork of Panakour Backup Plugin for OC https://github.com/panakour/oc-backup-plugin 
 
 <a name="requirements"></a>
 ## Requirements
