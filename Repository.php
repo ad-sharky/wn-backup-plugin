@@ -1,10 +1,10 @@
-<?php namespace PanaKour\Backup;
+<?php namespace MEB\Backup;
 
 use File;
 use Illuminate\Support\Facades\Config;
 use Log;
 use Storage;
-use Panakour\Backup\Models\Settings;
+use MEB\Backup\Models\Settings;
 
 class Repository
 {
@@ -33,7 +33,7 @@ class Repository
             return [];
         }
         $backups = [];
-        $path = "/panakour-backup";
+        $path = "/meb-backup";
         $webdavBackupFiles = Storage::disk('webdav')->files($path);
         foreach ($webdavBackupFiles as $index => $file) {
 
@@ -59,7 +59,7 @@ class Repository
     public function getLocalBackupsInTheOldPath()
     {
         $backups = [];
-        $path = storage_path('app/panakour-backup');
+        $path = storage_path('app/meb-backup');
         if (File::exists($path)) {
             $localBackupFiles = array_values(array_diff(scandir($path), ['.', '..']));
             foreach ($localBackupFiles as $index => $file) {

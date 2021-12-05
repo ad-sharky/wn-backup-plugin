@@ -28,9 +28,9 @@
                     <td class="column-button nolink">
                         <a
                             <?php if ($file['storage'] === 'Local'): ?>
-                                href="/storage/app/panakour-backup/<?=$file['fileInfo']['basename']?>"
+                                href="/storage/app/meb-backup/<?=$file['fileInfo']['basename']?>"
                             <?php else: ?>
-                                href="<?=Backend::url('panakour/backup/backups/downloadDropboxBackup/'.$file['fileInfo']['basename'])?>"
+                                href="<?=Backend::url('meb/backup/backups/downloadDropboxBackup/'.$file['fileInfo']['basename'])?>"
                             <?php endif ?>
                                 class="btn btn-success btn-sm">
                             Download
@@ -48,7 +48,7 @@
 
                         <?php if ($file['storage'] === 'Local'): ?>
                             <a
-                              href="/storage/app/uploads/panakour-backup/<?=$file['fileInfo']['basename']?>"
+                              href="/storage/app/uploads/meb-backup/<?=$file['fileInfo']['basename']?>"
                               class="btn btn-success btn-sm">
                               Download
                             </a>
@@ -56,14 +56,14 @@
                         <?php if ($file['storage'] === 'Webdav'): ?>
                             <a
                               download="<?=$file['fileInfo']['basename']?>"
-                              href="<?=Backend::url('panakour/backup/backups/downloadWebdavBackup/'.$file['fileInfo']['basename'])?>"
+                              href="<?=Backend::url('meb/backup/backups/downloadWebdavBackup/'.$file['fileInfo']['basename'])?>"
                               class="btn btn-success btn-sm">
                               Download
                             </a>
                         <?php endif ?>
                         <?php if ($file['storage'] === 'Dropbox'): ?>
                             <a
-                            href="<?=Backend::url('panakour/backup/backups/downloadDropboxBackup/'.$file['fileInfo']['basename'])?>"
+                            href="<?=Backend::url('meb/backup/backups/downloadDropboxBackup/'.$file['fileInfo']['basename'])?>"
                               class="btn btn-success btn-sm">
                               Download
                             </a>

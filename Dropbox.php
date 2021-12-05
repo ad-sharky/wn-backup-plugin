@@ -1,4 +1,4 @@
-<?php namespace PanaKour\Backup;
+<?php namespace MEB\Backup;
 
 use Illuminate\Support\Facades\Config;
 use League\Flysystem\Filesystem;

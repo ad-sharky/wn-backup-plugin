@@ -1,4 +1,4 @@
-<?php namespace PanaKour\Backup;
+<?php namespace MEB\Backup;
 
 use Storage;
 use League\Flysystem\Filesystem;

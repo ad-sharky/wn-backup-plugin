@@ -1,9 +1,9 @@
-<?php namespace PanaKour\Backup;
+<?php namespace MEB\Backup;
 
 use App;
 use Backend;
 use Config;
-use Panakour\Backup\Models\Settings;
+use MEB\Backup\Models\Settings;
 use System\Classes\PluginBase;
 use Illuminate\Foundation\AliasLoader;
 use System\Classes\SettingsManager;
@@ -15,9 +15,9 @@ class Plugin extends PluginBase
         return [
             'name'        => 'Backup',
             'description' => 'Backup files and database of October CMS',
-            'author' => 'Panagiotis Koursaris',
+            'author' => 'Panagiotis Koursaris, Matthias Eckel-Binder',
             'icon' => 'icon-floppy-o',
-            'homepage' => 'https://github.com/panakour/oc-backup-plugin',
+            'homepage' => 'https://github.com/M-EB/wn-backup-plugin',
         ];
     }
 
@@ -26,11 +26,11 @@ class Plugin extends PluginBase
         return [
             'backup' => [
                 'label' => 'Backup',
-                'url' => Backend::url('panakour/backup/backups'),
+                'url' => Backend::url('meb/backup/backups'),
                 'icon' => 'icon-floppy-o',
-                'iconSvg' => 'plugins/panakour/backup/assets/images/backup-icon.svg',
+                'iconSvg' => 'plugins/meb/backup/assets/images/backup-icon.svg',
                 'order' => 200,
-                'permissions' => ['panakour.backup.access'],
+                'permissions' => ['meb.backup.access'],
             ],
         ];
     }
@@ -45,7 +45,7 @@ class Plugin extends PluginBase
                 'category' => SettingsManager::CATEGORY_SYSTEM,
                 'class' => Settings::class,
                 'order' => 600,
-                'permissions' => ['panakour.backup.access'],
+                'permissions' => ['meb.backup.access'],
             ],
         ];
     }
@@ -53,7 +53,7 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'panakour.backup.access' => [
+            'meb.backup.access' => [
                 'label' => 'Manage backups',
                 'tab' => 'Backup'
             ],

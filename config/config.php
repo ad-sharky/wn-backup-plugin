@@ -6,29 +6,29 @@ return [
         'spatie/laravel-backup' => [
             'providers' => [
                 \Spatie\Backup\BackupServiceProvider::class,
-                \PanaKour\Backup\DropboxServiceProvider::class,
-                \PanaKour\Backup\WebdavServiceProvider::class,
+                \MEB\Backup\DropboxServiceProvider::class,
+                \MEB\Backup\WebdavServiceProvider::class,
             ],
 
             'config_namespace' => 'backup',
 
             'config' => [
                 'backup' => [
-                    'name' => 'panakour-backup',
+                    'name' => 'meb-backup',
                     'source' => [
                         'files' => [
 
                             /*
                              * The list of directories and files that will be included in the backup.
                              */
-                            'include' => \Panakour\Backup\Models\Settings::getIncludedFiles(),
+                            'include' => \MEB\Backup\Models\Settings::getIncludedFiles(),
 
                             /*
                              * These directories and files will be excluded from the backup.
                              *
                              * Directories used by the backup process will automatically be excluded.
                              */
-                            'exclude' => \Panakour\Backup\Models\Settings::getExcludedFiles(),
+                            'exclude' => \MEB\Backup\Models\Settings::getExcludedFiles(),
 
                             /*
                              * Determines if symlinks should be followed.
@@ -41,27 +41,27 @@ return [
                          * MySQL, PostgreSQL, SQLite and Mongo databases are supported.
                          */
                         'databases' => [
-                            \Panakour\Backup\Models\Settings::getDatabaseDriver(),
+                            \MEB\Backup\Models\Settings::getDatabaseDriver(),
                         ],
                     ],
 
                     /*
                      * The database dump can be gzipped to decrease diskspace usage.
                      */
-                    'gzip_database_dump' => \Panakour\Backup\Models\Settings::isGzipEnabled(),
+                    'gzip_database_dump' => \MEB\Backup\Models\Settings::isGzipEnabled(),
 
                     'destination' => [
 
                         /*
                          * The filename prefix used for the backup zip file.
                          */
-                        'filename_prefix' => \Panakour\Backup\Models\Settings::getFileNamePrefix(),
+                        'filename_prefix' => \MEB\Backup\Models\Settings::getFileNamePrefix(),
 
                         /*
                          * The disk names on which the backups will be stored.
                          */
                         'disks' => [
-                            \Panakour\Backup\Models\Settings::getStorage(),
+                            \MEB\Backup\Models\Settings::getStorage(),
                         ],
                     ],
                 ],
@@ -73,8 +73,8 @@ return [
                  */
                 'monitorBackups' => [
                     [
-                        'name' => 'panakour-backup',
-                        'disks' => [\Panakour\Backup\Models\Settings::getStorage()],
+                        'name' => 'meb-backup',
+                        'disks' => [\MEB\Backup\Models\Settings::getStorage()],
                         'newestBackupsShouldNotBeOlderThanDays' => 1,
                         'storageUsedMayNotBeHigherThanMegabytes' => 5000,
                     ],

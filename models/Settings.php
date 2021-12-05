@@ -1,8 +1,8 @@
-<?php namespace Panakour\Backup\Models;
+<?php namespace MEB\Backup\Models;
 
-use October\Rain\Database\Model;
-use October\Rain\Support\Facades\Config;
-use October\Rain\Support\Facades\File;
+use Winter\Storm\Database\Model;
+use Winter\Storm\Support\Facades\Config;
+use Winter\Storm\Support\Facades\File;
 
 class Settings extends Model
 {
@@ -10,7 +10,7 @@ class Settings extends Model
 
     public $implement = ['System.Behaviors.SettingsModel'];
 
-    public $settingsCode = 'panakour_backup_settings';
+    public $settingsCode = 'meb_backup_settings';
 
     public $settingsFields = 'fields.yaml';
 

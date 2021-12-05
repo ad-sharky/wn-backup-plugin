@@ -1,7 +1,7 @@
-<?php namespace PanaKour\Backup\Updates;
+<?php namespace MEB\Backup\Updates;
 
-use October\Rain\Database\Updates\Seeder;
-use Panakour\Backup\Models\Settings;
+use Winter\Storm\Database\Updates\Seeder;
+use MEB\Backup\Models\Settings;
 
 class SeedDefaultSettings extends Seeder
 {

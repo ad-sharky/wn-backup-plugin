@@ -1,4 +1,4 @@
-<?php namespace PanaKour\Backup\Controllers;
+<?php namespace MEB\Backup\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
@@ -6,10 +6,10 @@ use Artisan;
 use Backend;
 use Flash;
 use Illuminate\Support\Facades\Redirect;
-use October\Rain\Support\Facades\Config;
-use PanaKour\Backup\Dropbox;
-use Panakour\Backup\Models\Settings;
-use PanaKour\Backup\Repository;
+use Winter\Storm\Support\Facades\Config;
+use MEB\Backup\Dropbox;
+use MEB\Backup\Models\Settings;
+use MEB\Backup\Repository;
 use Storage;
 use Response;
 
@@ -17,7 +17,7 @@ class Backups extends Controller
 {
     public $pageTitle = 'Backups';
 
-    public $requiredPermissions = ['panakour.backup.access'];
+    public $requiredPermissions = ['meb.backup.access'];
 
     private $repo;
 
@@ -25,13 +25,13 @@ class Backups extends Controller
     {
         parent::__construct();
         $this->repo = $repository;
-        BackendMenu::setContext('PanaKour.Backup', 'backup', 'backups');
+        BackendMenu::setContext('MEB.Backup', 'backup', 'backups');
     }
 
     public function index()
     {
-        $this->addJs('/plugins/panakour/backup/assets/js/backups-page.js');
-        $this->addCss('/plugins/panakour/backup/assets/css/main.css');
+        $this->addJs('/plugins/meb/backup/assets/js/backups-page.js');
+        $this->addCss('/plugins/meb/backup/assets/css/main.css');
         $this->vars['backupFiles'] = $this->repo->getAll();
         $this->vars['oldPathBackupFiles'] = $this->repo->getLocalBackupsInTheOldPath();
     }
@@ -43,7 +43,7 @@ class Backups extends Controller
         Artisan::call('backup:run', $artisanArguments);
         Flash::success('Backup has been created.');
 
-        return Redirect::to(Backend::url('panakour/backup/backups'));
+        return Redirect::to(Backend::url('meb/backup/backups'));
     }
 
     public function onCreateBackup()
@@ -68,7 +68,7 @@ class Backups extends Controller
 
     public function downloadWebdavBackup($baseName)
     {
-        $path = "panakour-backup"."/".$baseName;
+        $path = "meb-backup"."/".$baseName;
         return Storage::disk('webdav')->get($path);
     }
 

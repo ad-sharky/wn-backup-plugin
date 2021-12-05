@@ -1,9 +1,9 @@
 {
-  "name": "panakour/oc-backup-plugin",
-  "type": "october-plugin",
-  "description": "Backup files and database of October CMS",
+  "name": "meb/wn-backup-plugin",
+  "type": "winter-plugin",
+  "description": "Backup files and database of Winter CMS",
   "keywords": [
-    "octobercms",
+    "wintercms",
     "backup"
   ],
   "license": "MIT",
@@ -11,6 +11,10 @@
     {
       "name": "Panagiots Koursaris",
       "email": "panakourweb@gmail.com"
+    },
+    {
+      "name": "Matthias Eckel-Binder",
+      "email": "meb@eckel-binder.de"
     }
   ],
   "require": {
