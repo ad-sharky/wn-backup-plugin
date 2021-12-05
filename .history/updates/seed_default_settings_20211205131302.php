@@ -13,7 +13,7 @@ class SeedDefaultSettings extends Seeder
         ];
         $pathsToExclude = [
             ['path' => 'vendor'],
-            ['path' => 'plugins/winter'],
+            ['path' => 'plugins/rainlab'],
         ];
         Settings::set('include_files', $pathsToInclude);
         Settings::set('exclude_files', $pathsToExclude);
